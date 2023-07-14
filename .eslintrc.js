@@ -6,16 +6,11 @@ module.exports = {
   settings: {
     'import/resolver': {
       typescript: {},
-      alias: {
-        map: [['@tests', './tests']],
-        extensions: ['.ts', '.json'],
-      },
     },
   },
   plugins: ['simple-import-sort'],
   extends: [
-    'plugin:vue/essential',
-    'plugin:vue/recommended',
+    'plugin:vue/vue3-recommended',
     'plugin:prettier-vue/recommended',
     'plugin:vuejs-accessibility/recommended',
     '@vue/airbnb',
@@ -67,7 +62,6 @@ module.exports = {
     ],
     'vue/multi-word-component-names': 'off',
   },
-  ignorePatterns: ['config/_deploy.runtimeConfig.js'],
   overrides: [
     {
       files: ['*.ts', '*.tsx'],
