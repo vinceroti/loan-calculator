@@ -2,15 +2,21 @@
   "compilerOptions": {
     "composite": true,
     "allowSyntheticDefaultImports": true,
-    "target": "ES2020",
+    "target": "esnext",
+    "module": "esnext",
     "useDefineForClassFields": true,
-    "module": "ESNext",
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "skipLibCheck": true,
-    "types": [
-      "vite/client",
-      "vitest/globals"
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
     ],
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+    },
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -26,14 +32,6 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-
-  "lib": [
-    "esnext",
-    "dom",
-    "dom.iterable",
-    "scripthost"
-  ],
-
   "include": [
     "vite.config.*",
     "env.d.ts",
