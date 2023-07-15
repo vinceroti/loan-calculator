@@ -1,16 +1,19 @@
 <script setup lang="ts">
-import Table from './components/Table.vue';
+import Calculator from './components/Calculator.vue';
 </script>
 
 <template>
-  <div>
+  <div class="app flex center-center">
     <header></header>
     <main>
-      <Table />
+      <Calculator />
     </main>
     <footer></footer>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
+.app {
+  height: 100vh;
+}
 </style>

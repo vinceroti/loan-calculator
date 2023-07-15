@@ -15,3 +15,32 @@ $opaque-text-color-light: rgba(255, 255, 255, 0.8);
 $opaque-text-color-medium: rgba(255, 255, 255, 0.5);
 $text-color: $white;
 $medium-gray: #9CABB6;
+$default-background: #f9f9f9;
+
+// Input
+$input-color: $black;
+$input-border: rem(1) solid #007acc;
+
+//Button
+$button-default-color: $white;
+$button-default-box-shadow: 0px spacing(element) rem(15) rgba(0, 0, 0, 0.15);
+$button-default-background: linear-gradient(150.13deg, rgba(255, 255, 255, 0.1) -21.73%, rgba(255, 255, 255, 0) 75.59%),
+  $medium-blue;
+$button-default-hover-background: linear-gradient(
+    150.13deg,
+    rgba(255, 255, 255, 0.1) -21.73%,
+    rgba(255, 255, 255, 0) 75.59%
+  ),
+  #0a5887;
+$button-default-disabled-background: linear-gradient(
+    150.13deg,
+    rgba(255, 255, 255, 0.1) -21.73%,
+    rgba(255, 255, 255, 0) 75.59%
+  ),
+  #0a5887;
+
+$button-priority-color: $medium-blue;
+$button-priority-background: $white;
+$button-priority-disabled-background: #d7d7d7;
+$button-priority-background-color-loader: rgba(0, 122, 204, 20%);
+

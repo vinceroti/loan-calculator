@@ -33,6 +33,7 @@ input::-webkit-inner-spin-button {
   margin: 0;
 }
 
+
 input[type=number] {
   -moz-appearance: textfield;
 }
@@ -152,6 +153,15 @@ button {
   }
 }
 
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
 h1 {
   @include font-s700;
   font-size: font-size(h1);
@@ -209,35 +219,37 @@ strong {
   @include font-p700;
 }
 
+input, select {
+  border: $input-border;
+  position: relative;
+  padding: rem(13) spacing(half);
+  outline: none;
+  font-size: 16px; // >= 16 to avoid auto zoom iOS devices
+  color: $input-color;
+  width: 100%;
+  min-height: 44px;
+  z-index: z-index(page);
+  border-radius: rem(10);
+  margin-bottom: spacing(paragraph);
+  &:focus {
+    outline: none;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  padding-right: 2.5rem;
+  background: transparent;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+  @include font-p400;
+}
+
 ul {
   list-style-type: none;
 }
 
-select {
-  -moz-appearance:none; /* Firefox */
-  -webkit-appearance:none; /* Safari and Chrome */
-  appearance:none;
-  background-image: url("data:image/svg+xml;utf8,<svg aria-hidden='true' style='transform: rotate(180deg) scale(0.37);color: rgba(255, 255, 255, 0.8);' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'><path fill='currentColor' d='M416 352c-8.188 0-16.38-3.125-22.62-9.375L224 173.3l-169.4 169.4c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25C432.4 348.9 424.2 352 416 352z'></path></svg>");
-  background-color: $input-background;
-  background-repeat: no-repeat;
-  background-position-x: calc(100% + 2px);
-  background-position-y: 0;
-  border-radius: rem(2);
-  border: $input-border;
-  font-size: 16px;
-  color: $input-color;
-  padding: rem(13) spacing(triple) rem(13) spacing(half);
-  min-height: 44px;
-  outline: none;
-  @include font-p400;
-  &:hover {
-    background-color: $input-hover-background;
-  }
-  &:focus {
-    border: $input-focus-border;
-  }
-}
-
-option {
-  color: $input-color;
-}
