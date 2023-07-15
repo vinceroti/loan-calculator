@@ -4,7 +4,6 @@ import { ref } from 'vue';
 import Stores from '@/enums/Stores.ts';
 
 export default defineStore(Stores.App, () => {
-
   const app = ref(false);
 
   return {

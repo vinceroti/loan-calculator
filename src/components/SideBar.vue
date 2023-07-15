@@ -63,11 +63,17 @@ const handleSubmit = () => {
     <form class="flex flex-wrap side-bar-form" @submit.prevent="handleSubmit">
       <label>
         Purchase Price *
-        <input v-model="purchasePrice" type="number" placeholder="E.g. $100,000,000" required />
+        <input
+          v-model="purchasePrice"
+          type="number"
+          placeholder="E.g. $100,000,000"
+          required
+          data-test-id="purchase-price"
+        />
       </label>
       <label>
         Interest Rate *
-        <input v-model="interestRate" type="number" placeholder="E.g. 20%" required />
+        <input v-model="interestRate" type="number" placeholder="E.g. 20%" required data-test-id="interest-rate" />
       </label>
       <fieldset class="flex flex-wrap">
         <label>
@@ -77,10 +83,11 @@ const handleSubmit = () => {
             :placeholder="`E.g. ${isValuePercentage ? '20%' : '$15,000,000'}`"
             type="number"
             required
+            data-test-id="down-payment"
           />
         </label>
         <label>
-          <select v-model="downPaymentType">
+          <select v-model="downPaymentType" data-test-id="down-payment-type">
             <option
               v-for="option in downPaymentTypeOptions"
               :key="option.value"
@@ -93,10 +100,16 @@ const handleSubmit = () => {
       <fieldset class="flex flex-wrap">
         Mortage Term ({{ isValueMonths ? 'Months' : 'Years' }}) *
         <label>
-          <input v-model="mortgageTerm" type="number" :placeholder="`E.g. ${isValueMonths ? '90' : '2'} `" required />
+          <input
+            v-model="mortgageTerm"
+            type="number"
+            :placeholder="`E.g. ${isValueMonths ? '90' : '2'} `"
+            required
+            data-test-id="mortgage-term"
+          />
         </label>
         <label>
-          <select v-model="yearsOrMonths">
+          <select v-model="yearsOrMonths" data-test-id="year-month-select">
             <option
               v-for="option in yearsOrMonthsOptions"
               :key="option.value"
