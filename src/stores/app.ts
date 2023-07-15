@@ -4,7 +4,6 @@ import { ref } from 'vue';
 import Stores from '@/enums/Stores.ts';
 
 export default defineStore(Stores.App, () => {
-  // use a ref to create a reactive value (state)
 
   const app = ref(false);
 
@@ -12,3 +11,9 @@ export default defineStore(Stores.App, () => {
     app,
   };
 });
+
+// This is just an example that I know how to setup a Pinia Store
+// I believe that this application is very low level that there is no need for this
+// Unless we plan on persisting data this data in local storage or accessing across the application
+
+// This would also be a good spot for the mortgage calculator logic

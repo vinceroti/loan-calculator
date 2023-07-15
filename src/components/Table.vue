@@ -55,13 +55,20 @@ const handleUp = (value: keyof MortgageData) => {
 const handleDown = (value: keyof MortgageData) => {
   allSubmittedMortgageData.value.sort((a, b) => (b[value] as number) - (a[value] as number));
 };
+
+const downPaymentDisplay = (value: number, isValuePercentage: boolean) => {
+  if (isValuePercentage) {
+    return `${value}%`;
+  }
+  return `$${value}`;
+};
 </script>
 
 <template>
   <table class="calculator-table">
     <thead>
       <tr>
-        <th v-for="(label, value) in headers" :key="value" class="flex left-center">
+        <th v-for="(label, value) in headers" :key="value" class="flex center-center text-left">
           {{ label }}
           <div class="arrows flex flex-wrap flex-column">
             <button class="arrow up button-link" type="button" @click="handleUp(value)" />
@@ -75,7 +82,7 @@ const handleDown = (value: keyof MortgageData) => {
         <td>{{ data.mortgageTerm }} {{ data.isValueMonths ? 'Months' : 'Years' }}</td>
         <td>${{ data.paymentAmount }}</td>
         <td>{{ data.interestRate }}%</td>
-        <td>{{ !data.isValuePercentage ? '$' : '' }}{{ data.downPayment }}{{ data.isValuePercentage ? '%' : '' }}</td>
+        <td>{{ downPaymentDisplay(data.downPayment, data.isValuePercentage) }}</td>
         <td>${{ data.purchasePrice }}</td>
         <td>${{ data.totalAmount }}</td>
       </tr>
@@ -87,25 +94,25 @@ const handleDown = (value: keyof MortgageData) => {
 .calculator-table {
   background-color: $white;
   border-radius: rem(10);
-  padding: spacing(base);
+  padding: spacing(paragraph);
 }
 
 th {
-  width: rem(175);
-  margin-left: spacing(base);
+  width: rem(150);
+  margin: spacing(paragraph);
 }
 
 tr {
   display: flex;
-  padding: spacing(half);
+  padding: spacing(paragraph);
   border-bottom: 1px solid $medium-gray;
   &:last-child {
     border-bottom: none;
   }
 }
 td {
-  width: rem(200);
-  margin: spacing(element);
+  width: rem(150);
+  margin: spacing(paragraph);
 }
 
 .arrows {

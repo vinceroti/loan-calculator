@@ -14,7 +14,7 @@ const handleSubmit = (value: number) => {
 <template>
   <section>
     <h1>Loan Payment Calculator</h1>
-    <div class="flex flex-wrap calculator-container">
+    <div class="flex calculator-container">
       <SideBar @submit="handleSubmit" />
       <Table :mortgage-data="mortgageData" />
     </div>
