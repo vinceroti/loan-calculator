@@ -49,11 +49,11 @@ watch(
 );
 
 const handleUp = (value: keyof MortgageData) => {
-  allSubmittedMortgageData.value.sort((a, b) => a[value] - b[value]);
+  allSubmittedMortgageData.value.sort((a, b) => (a[value] as number) - (b[value] as number));
 };
 
 const handleDown = (value: keyof MortgageData) => {
-  allSubmittedMortgageData.value.sort((a, b) => b[value] - a[value]);
+  allSubmittedMortgageData.value.sort((a, b) => (b[value] as number) - (a[value] as number));
 };
 </script>
 
