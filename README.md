@@ -1,6 +1,6 @@
 # Loan Calculator - Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+This is a mortgage calculator using Vue 3 and TypeScript in Vite. The project uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
 
 ## Recommended IDE Setup
 
@@ -45,3 +45,11 @@ To run tests, follow these steps:
 
 1. Install dependencies by running `npm install` or `yarn install`.
 2. Run tests by running `npm run test` or `yarn test`.
+
+## Additional Notes
+
+If this were a bigger application, it would be recommended to use a Pinia store to manage state. Additionally, if there were additional requirements, such as the need to persist data or share data between components, a Pinia store would be a good solution.
+
+To improve the calculator code, it could be moved into a separate TypeScript file to make it easier to test. This would allow for better separation of concerns and easier unit testing of the calculator logic.
+
+Author's note: I invested a significant amount of time configuring the project with my preferred styles and linting rules. For future coding challenges, I plan to use a more streamlined setup to focus on polishing the application.
