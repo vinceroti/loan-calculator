@@ -22,4 +22,9 @@ export default defineConfig({
       },
     },
   },
+  test: {
+    testTimeout: 15000,
+    globals: true,
+    environment: 'jsdom',
+  },
 });
