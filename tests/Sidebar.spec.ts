@@ -6,12 +6,12 @@ import SideBar from '@/components/SideBar.vue';
 describe('SideBar', () => {
   it('emits the submit event with the correct data', () => {
     const wrapper = shallowMount(SideBar);
-    (wrapper.find('[data-test-id="purchase-price"]').element as HTMLInputElement).value = '500000';
-    (wrapper.find('[data-test-id="interest-rate"]').element as HTMLInputElement).value = '6';
-    (wrapper.find('[data-test-id="down-payment"]').element as HTMLInputElement).value = '20';
-    (wrapper.find('[data-test-id="mortgage-term"]').element as HTMLInputElement).value = '15';
-    (wrapper.find('[data-test-id="year-month-select"]').element as HTMLSelectElement).value = 'years';
-    (wrapper.find('[data-test-id="down-payment-type"]').element as HTMLSelectElement).value = 'percentage';
+    wrapper.find('[data-test-id="purchase-price"]').setValue('500000');
+    wrapper.find('[data-test-id="interest-rate"]').setValue('6');
+    wrapper.find('[data-test-id="down-payment"]').setValue('20');
+    wrapper.find('[data-test-id="mortgage-term"]').setValue('15');
+    wrapper.find('[data-test-id="year-month-select"]').setValue('years');
+    wrapper.find('[data-test-id="down-payment-type"]').setValue('percentage');
     wrapper.find('form').trigger('submit.prevent');
 
     expect(wrapper.emitted().submit).toBeTruthy();

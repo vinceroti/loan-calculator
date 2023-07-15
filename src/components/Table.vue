@@ -71,20 +71,30 @@ const downPaymentDisplay = (value: number, isValuePercentage: boolean) => {
         <th v-for="(label, value) in headers" :key="value" class="flex center-center text-left">
           {{ label }}
           <div class="arrows flex flex-wrap flex-column">
-            <button class="arrow up button-link" type="button" @click="handleUp(value)" />
-            <button class="arrow button-link" type="button" @click="handleDown(value)" />
+            <button
+              data-test-id="ascending-arrow"
+              class="arrow up button-link"
+              type="button"
+              @click="handleUp(value)"
+            />
+            <button
+              data-test-id="descending-arrow"
+              class="arrow button-link"
+              type="button"
+              @click="handleDown(value)"
+            />
           </div>
         </th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="(data, index) in allSubmittedMortgageData" :key="index">
-        <td>{{ data.mortgageTerm }} {{ data.isValueMonths ? 'Months' : 'Years' }}</td>
-        <td>${{ data.paymentAmount }}</td>
-        <td>{{ data.interestRate }}%</td>
-        <td>{{ downPaymentDisplay(data.downPayment, data.isValuePercentage) }}</td>
-        <td>${{ data.purchasePrice }}</td>
-        <td>${{ data.totalAmount }}</td>
+        <td data-test-id="mortgage-term">{{ data.mortgageTerm }} {{ data.isValueMonths ? 'Months' : 'Years' }}</td>
+        <td data-test-id="payment-amount">${{ data.paymentAmount }}</td>
+        <td data-test-id="interest-rate">{{ data.interestRate }}%</td>
+        <td data-test-id="down-payment">{{ downPaymentDisplay(data.downPayment, data.isValuePercentage) }}</td>
+        <td data-test-id="purchase-price">${{ data.purchasePrice }}</td>
+        <td data-test-id="total-amount">${{ data.totalAmount }}</td>
       </tr>
     </tbody>
   </table>
